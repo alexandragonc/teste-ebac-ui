@@ -8,19 +8,20 @@ describe('Funcionalidade Páginas de Produtos', () => {
 
     it('Deve selecionar um produto da lista', () => {
         cy.get('.product-block')
-            //.first()
+            .first()
             //.last()
             //.eq(3) //choose a product
-            .contains('Ariel Roll Sleeve Sweatshirt')
+            //.contains('Ariel Roll Sleeve Sweatshirt')
             .click()
-        //or cy.get('[class="product-block grid"]').first().click()
+            //or cy.get('[class="product-block grid"]').first().click()
     });
 
     it.only('Deve adicionar um produto ao carrinho', () => {
         var quantidade = 10
 
         cy.get('.product-block')
-            .contains('Ariel Roll Sleeve Sweatshirt').click()
+            .contains('Ariel Roll Sleeve Sweatshirt')
+            .click()
             cy.get('.button-variable-item-L').click()
             cy.get('.button-variable-item-Purple').click()
             cy.get('.input-text').clear().type(quantidade)

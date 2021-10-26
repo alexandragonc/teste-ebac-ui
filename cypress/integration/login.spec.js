@@ -10,9 +10,11 @@ context('Funcionalidade Login', () => {
         cy.screenshot();
     })
     it('Deve fazer login com sucesso', () => { 
+        let emailAluno = 'aluno_ebac@teste.com'
+        let senhaAluno = 'teste@teste.com'
 
-        cy.get('#username').type('aluno_ebac@teste.com')
-        cy.get('#password').type('teste@teste.com')
+        cy.get('#username').type(emailAluno)
+        cy.get('#password').type(senhaAluno)
         cy.get('.woocommerce-form > .button').click()
 
         cy.get('.page-title').should('contain', 'Minha conta')
