@@ -31,6 +31,7 @@ Cypress.Commands.add('login', (usuario, senha) => {
 })
 
 Cypress.Commands.add('preCadastro', (email, senha, nome, sobrenome) => {
+    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
     cy.get('#reg_email').type(email)
     cy.get('#reg_password').type(senha, { log: false })
     cy.get(':nth-child(4) > .button').click()
